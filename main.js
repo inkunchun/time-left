@@ -1,7 +1,8 @@
-const bgColors = ["#7ed348", "#26b170", "#01377d"];
+const colors = ["#7ed348", "#26b170", "#01377d"];
 
 window.onload = () => {
-  document.body.style.background = bgColors[0];
+  const tempDate = new Date();
+  changeColors(24 - tempDate.getHours());
   const span = document.createElement("span");
   const node = document.createTextNode("Loading...");
   span.appendChild(node);
@@ -27,13 +28,13 @@ function callbackFn() {
 
 function changeColors(hour) {
   if (hour > 12) {
-    document.body.style.background = bgColors[0];
-    numSpan[0].style.color = bgColors[2];
+    document.body.style.background = colors[0];
+    // numSpan[0].style.color = colors[2];
   } else if (hour <= 12 && hour > 6) {
-    document.body.style.background = bgColors[1];
-    numSpan[0].style.color = bgColors[2];
+    document.body.style.background = colors[1];
+    // numSpan[0].style.color = colors[2];
   } else if (hour <= 6) {
-    document.body.style.background = bgColors[2];
-    numSpan[0].style.color = bgColors[0];
+    document.body.style.background = colors[2];
+    // numSpan[0].style.color = colors[0];
   }
 }
