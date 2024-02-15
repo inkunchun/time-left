@@ -1,0 +1,39 @@
+const bgColors = ["#7ed348", "#26b170", "#01377d"];
+
+window.onload = () => {
+  document.body.style.background = bgColors[0];
+  const span = document.createElement("span");
+  const node = document.createTextNode("Loading...");
+  span.appendChild(node);
+  span.classList.add("text-body");
+  document.body.appendChild(span);
+  setInterval(callbackFn, 1000);
+};
+
+function callbackFn() {
+  const date = new Date();
+  let numSpan = document.getElementsByClassName("text-body");
+  let totalSeconds =
+    86400 - date.getHours() * 3600 - date.getMinutes() * 60 - date.getSeconds();
+  let newHours = Math.floor(totalSeconds / 3600);
+  let newMinutes = Math.floor((totalSeconds % 3600) / 60);
+  let newSeconds = 60 - date.getSeconds();
+  if (newSeconds == 60) {
+    newSeconds = 0;
+  }
+  numSpan[0].textContent = newHours + " : " + newMinutes + " : " + newSeconds;
+  changeColors(newHours);
+}
+
+function changeColors(hour) {
+  if (hour > 12) {
+    document.body.style.background = bgColors[0];
+    numSpan[0].style.color = bgColors[2];
+  } else if (hour <= 12 && hour > 6) {
+    document.body.style.background = bgColors[1];
+    numSpan[0].style.color = bgColors[2];
+  } else if (hour <= 6) {
+    document.body.style.background = bgColors[2];
+    numSpan[0].style.color = bgColors[0];
+  }
+}

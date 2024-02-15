@@ -1,0 +1,11 @@
+.text-body {
+    color: black;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 175px;
+    text-align: center;
+    padding: 275px 0;
+  }
+  
