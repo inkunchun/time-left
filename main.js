@@ -1,4 +1,5 @@
 const colors = ["#7ed348", "#26b170", "#01377d"];
+const messages = ["Take your time...", "Almost there...", "Not done? There's still tomorrow."];
 
 window.onload = () => {
   const tempDate = new Date();
