@@ -2,9 +2,13 @@
     color: black;
   } */
 
+#messages {
+  font-size: 30px;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 175px;
+  font-size: 200px;
   text-align: center;
-  padding: 275px 0;
+  padding: 170px 0;
 }
